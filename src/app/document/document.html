@@ -1,0 +1,251 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">SPA Document - Shell</h1>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4 mt-4">
+            <h4>Requested Date</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="requestedDate">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Artifact Name</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="artifactName">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Artifact Version</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="artifactVersion">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Artifact Build Date</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="artifactBuildDate">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Build Job Pipeline Id</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="buildJobPipelineId">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Git Branch</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="gitBranch">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Tag Number</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="tagNumber">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Deployment Version</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="deploymentVersion">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Job Id</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="jobId">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Rollback Artifact Name</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="rollbackArtifactName">
+        </div>
+        <div class="col-md-4 mt-4">
+            <h4>Rollback Artifact Version</h4>
+            <input type="text" class="form-control" placeholder="Enter some text" [(ngModel)]="rollbackArtifactVersion">
+        </div>
+    </div>
+    <view-document></view-document>
+    <div class="row mt-4">
+        <div class="col-md-4 text-center">
+            <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Preview
+            </button>
+        </div>
+        <div class="col-md-4 text-center">
+            <button type="button" class="btn btn-success" (click)="downloadDoc()">Download</button>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 94vw; width: 94vw;">
+            <div class="modal-content" id="content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <table class="table table-bordered" id="myTable">
+                            <thead>
+                                <tr>
+                                    <td colspan="2">
+                                        <h2 class="text-center">SPA Deployment Request Form </h2>
+                                        <h4 class="text-center text-red">Note: All fields in red are mandatory. If there
+                                            are any
+                                            questions, please reach out
+                                            to App
+                                            Ops. Incomplete instructions will not be processed.</h4>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Name</th>
+                                    <td>Vertical: SHELL SIPS <br>
+                                        App Name: SIPS <br>
+                                        Environment: US-CPP <br>
+                                        Realm Code – PP-SHELL-STG
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Requestor</th>
+                                    <td class="text-red">Raghu</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Targeted Vertical</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Requested Date</th>
+                                    <td class="text-red">{{requestedDate}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Targeted Servers</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" colspan="2">Build Information (All fields are required)</th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Artifact Name</th>
+                                    <td>{{artifactName}} <br> {{artifactVersion}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Build Job URL</th>
+                                    <td><a href="https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/pipelines/{{buildJobPipelineId}}/builds"
+                                            target="_blank">https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/pipelines/{{buildJobPipelineId}}/builds</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">GIT Trunk/Branch</th>
+                                    <td><a href="https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tree/{{gitBranch}}"
+                                            target="_blank">https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tree/{{gitBranch}}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SVN Release Tag Location</th>
+                                    <td><a href="https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tags/{{tagNumber}}"
+                                            target="_blank">https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tags/{{tagNumber}}</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Artifact Type</th>
+                                    <td>Zip</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Version ID</th>
+                                    <td>{{deploymentVersion}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pre Deployment Instructions</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Deployment Instructions</th>
+                                    <td>
+                                        <ul class="mb-0">
+                                            <li class="text-red">1. Download artifacts from artifactory <br>
+                                                <span class="text-green">{{artifactName}}</span> <br> <span
+                                                    class="text-blue">{{artifactVersion}}</span>
+                                            </li>
+                                            <li class="text-red">2. Deploy SPA application</li>
+                                            <li class="mt-4">3. Get the Bearer Token for this environment using right client id and
+                                                secret</li>
+                                            <li>4. Go to the upload Zip collection in Postman, if you do not have the
+                                                collection use the below to import into postman:</li>
+                                            <li class="mt-4"> <span class="background-yellow">Use the following BaseURL’s</span>
+                                                <br><span class="background-yellow mt-4">
+                                                    baseurl CPP (PP-SHELL-STG)</span> – <span
+                                                    class="text-blue">https://api.us1.pp.covisint.com</span> <br><span
+                                                    class="background-yellow mt-4">
+                                                    baseurl for PROD(SHELL-PROD) </span> - <span
+                                                    class="text-blue">https://api.us1.covisint.com</span>
+                                            </li>
+                                            <li class="mt-4">
+                                                <pre>
+curl -X POST \
+  &lt;&lt;baseurl&gt;&gt;/proxyadmin/v2/upload \
+  -H 'Accept: multipart/form-data' \
+  -H 'Authorization: Bearer &lt;&lt;token&gt;&gt;' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: 5f3bd857-4f50-4d73-9676-09ba3dc91202' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -H <span class="background-yellow">'origin-url:</span> &lt;&lt;originurl&gt;&gt;' \
+  -F zipfile=&lt;&lt;zip file&gt;&gt;
+</pre>
+                                            </li>
+                                            <li class="mt-4">5.Replace the Bearer token and <span class="background-yellow"> originurl </span> to sipsapp.stg.sips.shell.com
+                                            </li>
+                                            <li>6. Click on the Body tab in the postman and select “form-data” choice
+                                                button</li>
+                                            <li>7. In key column, type “zipfile” and select File from dropdown.</li>
+                                            <li>8. Click on Choose Files button and select the file downloaded from the
+                                                artifactory location mentioned above</li>
+                                            <li>9. Verify if all the steps have been executed correctly and Bearer &
+                                                <span class="background-yellow"> originurl </span> value has been put correctly</li>
+                                            <li>10. Click on Send.</li>
+                                            <li>11. In response a Job_Id will be sent, which needs to be put into the
+                                                change control CRT.
+                                                Also Update the ticket with artifact file name and SVN location from
+                                                where you downloaded.
+                                            </li>
+                                            <li>12. You can verify job status using
+                                                <pre class="text-red mt-4">curl -X GET \
+  'https://api.us1.pp.covisint.com/proxyadmin/v2/status?jobid= {{jobId}}'\
+  -H 'Authorization: Bearer token' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Postman-Token: fb48a93e-1626-f855-9a12-7af63134d142' \
+  -H 'origin-url: <span class="background-yellow">'originurl'</span>'
+</pre>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Post Deployment Instructions</th>
+                                    <td>
+                                        <ul class="mb-0">
+                                            <li>1. Verify deployment</li>
+                                            <li>2. Go to https://sipsapp.stg.sips.shell.com - verify the login pages
+                                            </li>
+                                            <li>3. Go to https://sipsapp.stg.sips.shell.com/appConfig-build.json
+                                                <ul>
+                                                    <li>
+                                                        Verify the buildArtifact and buildDate
+                                                    </li>
+                                                    <li>It should be <br>
+                                                        <span class="text-green">"buildArtifact":" {{ artifactName }} "</span>, <br>
+                                                        <span class="text-green">"buildDate":
+                                                            " {{artifactBuildDate}} "</span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>4. Verify deployment</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Rollback Artifact
+                                        Version
+                                    </th>
+                                    <td>{{rollbackArtifactName}} <br> {{rollbackArtifactVersion}} </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Rollback Instructions</th>
+                                    <td class="text-green">NA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
