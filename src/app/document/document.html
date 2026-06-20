@@ -87,15 +87,12 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">Name</th>
-                                    <td>Vertical: SHELL SIPS <br>
-                                        App Name: SIPS <br>
-                                        Environment: US-CPP <br>
-                                        Realm Code – PP-SHELL-STG
+                                    <td>Demo
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Requestor</th>
-                                    <td class="text-red">Raghu</td>
+                                    <td class="text-red">A Name</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Targeted Vertical</th>
@@ -118,20 +115,20 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">Build Job URL</th>
-                                    <td><a href="https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/pipelines/{{buildJobPipelineId}}/builds"
-                                            target="_blank">https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/pipelines/{{buildJobPipelineId}}/builds</a>
+                                    <td><a href="https://gitlab.otxlab.net/demo/{{buildJobPipelineId}}/builds"
+                                            target="_blank">https://gitlab.otxlab.net/demo/{{buildJobPipelineId}}/builds</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">GIT Trunk/Branch</th>
-                                    <td><a href="https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tree/{{gitBranch}}"
-                                            target="_blank">https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tree/{{gitBranch}}</a>
+                                    <td><a href="https://gitlab.otxlab.net/demo/{{gitBranch}}"
+                                            target="_blank">https://gitlab.otxlab.net/demo/{{gitBranch}}</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th scope="row">SVN Release Tag Location</th>
-                                    <td><a href="https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tags/{{tagNumber}}"
-                                            target="_blank">https://gitlab.otxlab.net/shellsips/shell-sips-ui/-/tags/{{tagNumber}}</a>
+                                    <td><a href="https://gitlab.otxlab.net/demo/{{tagNumber}}"
+                                            target="_blank">https://gitlab.otxlab.net/demo/{{tagNumber}}</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -155,49 +152,28 @@
                                                     class="text-blue">{{artifactVersion}}</span>
                                             </li>
                                             <li class="text-red">2. Deploy SPA application</li>
-                                            <li class="mt-4">3. Get the Bearer Token for this environment using right client id and
+                                            <li class="mt-4">3. Get the Bearer Token for this environment using right
+                                                client id and
                                                 secret</li>
                                             <li>4. Go to the upload Zip collection in Postman, if you do not have the
                                                 collection use the below to import into postman:</li>
-                                            <li class="mt-4"> <span class="background-yellow">Use the following BaseURL’s</span>
-                                                <br><span class="background-yellow mt-4">
-                                                    baseurl CPP (PP-SHELL-STG)</span> – <span
-                                                    class="text-blue">https://api.us1.pp.covisint.com</span> <br><span
-                                                    class="background-yellow mt-4">
-                                                    baseurl for PROD(SHELL-PROD) </span> - <span
-                                                    class="text-blue">https://api.us1.covisint.com</span>
+                                            <li class="mt-4"> <span class="background-yellow">Use the following
+                                                    BaseURL’s</span>
                                             </li>
                                             <li class="mt-4">
-                                                <pre>
-curl -X POST \
-  &lt;&lt;baseurl&gt;&gt;/proxyadmin/v2/upload \
-  -H 'Accept: multipart/form-data' \
-  -H 'Authorization: Bearer &lt;&lt;token&gt;&gt;' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Postman-Token: 5f3bd857-4f50-4d73-9676-09ba3dc91202' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -H <span class="background-yellow">'origin-url:</span> &lt;&lt;originurl&gt;&gt;' \
-  -F zipfile=&lt;&lt;zip file&gt;&gt;
-</pre>
+                                                Demo Curl
                                             </li>
-                                            <li class="mt-4">5.Replace the Bearer token and <span class="background-yellow"> originurl </span> to sipsapp.stg.sips.shell.com
+                                            <li class="mt-4">5.Demo step 1
                                             </li>
-                                            <li>6. Click on the Body tab in the postman and select “form-data” choice
-                                                button</li>
-                                            <li>7. In key column, type “zipfile” and select File from dropdown.</li>
-                                            <li>8. Click on Choose Files button and select the file downloaded from the
-                                                artifactory location mentioned above</li>
-                                            <li>9. Verify if all the steps have been executed correctly and Bearer &
-                                                <span class="background-yellow"> originurl </span> value has been put correctly</li>
-                                            <li>10. Click on Send.</li>
-                                            <li>11. In response a Job_Id will be sent, which needs to be put into the
-                                                change control CRT.
-                                                Also Update the ticket with artifact file name and SVN location from
-                                                where you downloaded.
-                                            </li>
+                                            <li>6. Demo step 2</li>
+                                            <li>7. Demo step 3</li>
+                                            <li>8. Demo step 4</li>
+                                            <li>9. Demo step 5</li>
+                                            <li>10. Demo step 6</li>
+                                            <li>11. Demo step 7</li>
                                             <li>12. You can verify job status using
                                                 <pre class="text-red mt-4">curl -X GET \
-  'https://api.us1.pp.covisint.com/proxyadmin/v2/status?jobid= {{jobId}}'\
+  'https://demo?jobid= {{jobId}}'\
   -H 'Authorization: Bearer token' \
   -H 'Cache-Control: no-cache' \
   -H 'Postman-Token: fb48a93e-1626-f855-9a12-7af63134d142' \
@@ -212,15 +188,16 @@ curl -X POST \
                                     <td>
                                         <ul class="mb-0">
                                             <li>1. Verify deployment</li>
-                                            <li>2. Go to https://sipsapp.stg.sips.shell.com - verify the login pages
+                                            <li>2. Go to https://demo - verify the login pages
                                             </li>
-                                            <li>3. Go to https://sipsapp.stg.sips.shell.com/appConfig-build.json
+                                            <li>3. Go to https://demo/appConfig-build.json
                                                 <ul>
                                                     <li>
                                                         Verify the buildArtifact and buildDate
                                                     </li>
                                                     <li>It should be <br>
-                                                        <span class="text-green">"buildArtifact":" {{ artifactName }} "</span>, <br>
+                                                        <span class="text-green">"buildArtifact":" {{ artifactName }}
+                                                            "</span>, <br>
                                                         <span class="text-green">"buildDate":
                                                             " {{artifactBuildDate}} "</span>
                                                     </li>
