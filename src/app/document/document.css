@@ -1,0 +1,64 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    background-color: #fffde7;
+    color: #000000;
+    padding: 16px;
+}
+
+h1, h2, h3, h4, h5, h6, p, label {
+    color: #000000;
+}
+
+.form-control {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #aaa;
+}
+
+.form-control::placeholder {
+    color: #666666;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #888;
+    box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.1);
+}
+
+th{
+    width: 20%;
+}
+
+.modal-dialog{
+    max-width: 98vw;
+    width: 98vw;
+    height: 98vh;
+    margin: 1vh auto;
+}
+
+.modal-content{
+    height: 98vh;
+}
+
+.modal-body {
+    overflow-y: auto;
+    height: calc(98vh - 60px);
+}
+
+.text-red{
+    color: red;
+}
+
+.text-green{
+    color: green;
+}
+
+.text-blue{
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity,1));
+}
+
+.background-yellow{
+    background-color: yellow;
+}
